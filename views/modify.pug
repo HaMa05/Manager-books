@@ -1,0 +1,7 @@
+h1 Modify the book
+ul
+	each book in books
+		li
+			span= book.title
+			a(href="/books/modify/" + book.id +"/title" style='text-decoration: none; color: #2196f3; font-size: 20px; font-weight: bold; padding: 0 10px') Sửa
+a(href="/books" style='text-decoration: none; color: #dd3737; font-size: 40px; font-weight: bold') Back
