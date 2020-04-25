@@ -1,0 +1,7 @@
+h1 Modify Title
+form(action="/books/modify/title" method="POST")
+	label(for="title") Title:
+	br
+	input(type="hidden" id="title" name="id" required value=books.id) 
+	input(type="text" id="title" name="title" required value=books.title)
+	button Apply
