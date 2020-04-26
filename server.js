@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const pug = require('pug');
 app.set('view engine', 'pug');
-app.set('views', './views');
+app.set('views', './views/');
 
 const bookRouter = require('./router/book.router.js');
 const userRouter = require('./router/user.router.js');

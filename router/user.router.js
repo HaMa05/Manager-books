@@ -7,19 +7,19 @@ const users = db.get('users').value();
 
 const router = express.Router();
 router.get('/', (req, res) => {
-	res.render('indexUser.pug');
+	res.render('user/indexUser.pug');
 })
 
 // xem tất cả sách
 router.get('/see', (req, res) => {
-	res.render('seeUser.pug', {
+	res.render('user/seeUser.pug', {
 		users: users
 	});
 })
 
 // thêm sách
 router.get('/add', (req, res) => {
-	res.render('addUser.pug');
+	res.render('user/addUser.pug');
 })
 
 router.post('/add/user', (req, res) => {
@@ -60,7 +60,7 @@ router.post('/add/user', (req, res) => {
 
 // xóa sách
 router.get('/delete', (req, res) => {
-	res.render('deleteUser.pug', {
+	res.render('user/deleteUser.pug', {
 		users: users
 	});
 })
