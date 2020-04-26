@@ -14,14 +14,14 @@ router.get('/', (req, res) => {
 		})
 	})
 	// console.log(user.name);
-	res.render('transaction.pug', {
+	res.render('transaction/transaction.pug', {
 		collections: user
 	});
 
 })
 
 router.get('/create', (req, res) => {
-	res.render('transaction-create.pug', {
+	res.render('transaction/transaction-create.pug', {
 		users: users,
 		books: books
 	});
