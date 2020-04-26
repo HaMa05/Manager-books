@@ -1,37 +1,16 @@
 const express = require("express");
-//automational create id
-const shortid = require('shortid');
-
-const db = require('../db');
-const users = db.get('users').value();
-
+// const generatePassword = require('password-generator');
+const controllerUser = require('../controllers/user.controller.js');;
 const router = express.Router();
-router.get('/', (req, res) => {
-	res.render('user/indexUser.pug');
-})
+
+router.get('/', controllerUser.index);
 
 // xem tất cả sách
-router.get('/see', (req, res) => {
-	res.render('user/seeUser.pug', {
-		users: users
-	});
-})
+router.get('/see', controllerUser.see);
 
 // thêm sách
-router.get('/add', (req, res) => {
-	res.render('user/addUser.pug');
-})
-
-router.post('/add/user', (req, res) => {
-	let id = shortid.generate();
-	let data = req.body;
-	req.body.id = id;
-	db.get('users')
-	  .push(data)
-	  .write();
-
-	res.redirect('/users');
-})
+router.get('/add', controllerUser.add);
+router.post('/add/user', controllerUser.postUser);
 
 //sửa title sách
 // router.get('/modify', (req, res) => {
@@ -59,18 +38,7 @@ router.post('/add/user', (req, res) => {
 // })
 
 // xóa sách
-router.get('/delete', (req, res) => {
-	res.render('user/deleteUser.pug', {
-		users: users
-	});
-})
-
-router.get('/:id/delete', (req, res) => {
-	const id = req.params.id;
-	db.get('users')
-	  .remove({id: id})
-	  .write()
-	res.redirect('/users');
-})
+router.get('/delete', controllerUser.deleteUser);
+router.get('/:id/delete', controllerUser.getDelete);
 
 module.exports = router;
