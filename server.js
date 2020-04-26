@@ -9,9 +9,9 @@ const pug = require('pug');
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-const bookRouter = require('./public/book.js');
-const userRouter = require('./public/user.js');
-const transactionRouter = require('./public/transaction.js');
+const bookRouter = require('./router/book.router.js');
+const userRouter = require('./router/user.router.js');
+const transactionRouter = require('./router/transaction.router.js');
 
 // Trang chính
 app.get('/', (req, res) => {
