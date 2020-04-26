@@ -1,0 +1,7 @@
+h1 Delete the user
+ul
+	each user in users
+		li
+			span= user.title
+			a(href="/users/" + user.id +"/delete" style='text-decoration: none; color: #2196f3; font-size: 20px; font-weight: bold; padding: 0 10px') Xóa
+a(href="/users" style='text-decoration: none; color: #dd3737; font-size: 40px; font-weight: bold') Back
