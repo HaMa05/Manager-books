@@ -39,11 +39,6 @@
       "id": "RStQJfwU2"
     },
     {
-      "title": "Match",
-      "description": "Everything",
-      "id": "dsf1eb1_7"
-    },
-    {
       "name": "Bang Tho",
       "sdt": "123",
       "id": "_sr0Svzl4"
@@ -51,39 +46,16 @@
   ],
   "collections": [
     {
-      "userId": "2ILXMakTP",
-      "bookId": "ySJMG8v4l",
-      "id": "VWUy3G8ma"
-    },
-    {
-      "userId": "uYfevDNCu",
-      "bookId": "LXlfTIDOi",
-      "id": "tDA-9RJgr"
-    },
-    {
       "userId": "RStQJfwU2",
       "bookId": "iwJn1hbvG",
-      "id": "TuGczi-3h"
-    },
-    {
-      "userId": "2ILXMakTP",
-      "bookId": "ySJMG8v4l",
-      "id": "DnbsZOJPE"
-    },
-    {
-      "userId": "2ILXMakTP",
-      "bookId": "ySJMG8v4l",
-      "id": "0LVmMcG55"
-    },
-    {
-      "userId": "2ILXMakTP",
-      "bookId": "ySJMG8v4l",
-      "id": "_o9vQDCv3"
+      "id": "o48wFwG3D",
+      "isComplete": false
     },
     {
       "userId": "_sr0Svzl4",
-      "bookId": "iwJn1hbvG",
-      "id": "GDiW4J6jJ"
+      "bookId": "TNHkHuSqm",
+      "id": "GJR44_DFP",
+      "isComplete": false
     }
   ]
 }
