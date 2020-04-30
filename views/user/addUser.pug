@@ -1,6 +1,8 @@
 extends ../layout/common-user.pug
 block content
 	h1(style="font-family: Arial, sans-serif;" class="text-success") Add user
+	if error
+		.alert.alert-danger= error
 	form(action="/users/add/user" method="POST")
 		.group(class="form-group col-md-6")
 			label(for="name") Name:
