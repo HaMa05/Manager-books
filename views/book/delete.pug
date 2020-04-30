@@ -1,7 +1,13 @@
-h1 Delete the book
-ul
-	each book in books
-		li
-			span= book.title
-			a(href="/books/" + book.id +"/delete" style='text-decoration: none; color: #2196f3; font-size: 20px; font-weight: bold; padding: 0 10px') Xóa
-a(href="/books" style='text-decoration: none; color: #dd3737; font-size: 40px; font-weight: bold') Back
+extends ../layout/common-book.pug
+block content
+	h1(style="font-family: Arial, sans-serif;" class="text-danger") Delete the book
+	table(class="table table-striped shadow-sm p-3 mb-5 bg-white rounded",style="text-align: left")
+		tr
+			th(scope="col") Title
+			th(scope="col") Delete
+		each book in books
+			tr
+				td(scope="row")
+					span= book.title
+				td(scope="row")
+					a(href="/books/" + book.id +"/delete" style='text-decoration: none; color: #dc3545; font-size: 20px; font-weight: bold; padding: 0 10px') Xóa

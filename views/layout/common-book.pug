@@ -1,0 +1,20 @@
+html
+  head
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+  body
+    nav(class="nav justify-content-center")
+      a(href="/" class="nav-link active") 
+        button(type="button" class="btn btn-info") Home
+        
+      a(href="/books/see" class="nav-link active ") 
+        button(type="button" class="btn btn-primary ") Xem Sách
+
+      a(href="/books/add" class="nav-link active") 
+        button(type="button" class="btn btn-success") Thêm Sách
+
+      a(href="/books/modify" class="nav-link active") 
+        button(type="button" class="btn btn-warning") Sửa tiêu đề
+
+      a(href="/books/delete" class="nav-link active") 
+        button(type="button" class="btn btn-danger") Xóa
+    block content 

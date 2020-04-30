@@ -1,7 +1,7 @@
-h1 Modify Title
-form(action="/books/modify/title" method="POST")
-	label(for="title") Title:
-	br
-	input(type="hidden" id="title" name="id" required value=books.id) 
-	input(type="text" id="title" name="title" required value=books.title)
-	button Apply
+extends ../layout/common-book.pug
+block content
+	h1(style="font-family: Arial, sans-serif;" class="text-warning") Modify Title
+	form(action="/books/modify/title" method="POST" class="d-flex")
+		input(type="hidden" id="title" name="id" required value=books.id) 
+		input(type="text" id="title" class="form-control" name="title" required value=books.title)
+		button(type="submit" class="btn btn-primary ml-2") Apply

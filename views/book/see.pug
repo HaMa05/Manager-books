@@ -1,6 +1,10 @@
-h1 List book
-ul
-	each book in books
-		li
-			span= book.title
-a(href="/books" style='text-decoration: none; color: #dd3737; font-size: 40px; font-weight: bold') Back
+extends ../layout/common-book.pug
+block content
+	h1(style="font-family: Arial, sans-serif;" class="text-primary") List book
+	table(class="table table-striped shadow-sm p-3 mb-5 bg-white rounded",style="text-align: left")
+		tr
+			th(scope="col") Title
+		each book in books
+			tr
+				td(scope="row")
+					span= book.title
