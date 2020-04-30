@@ -1,6 +1,10 @@
-h1 List user
-ul
-	each user in users
-		li
-			span= user.name
-a(href="/users" style='text-decoration: none; color: #dd3737; font-size: 40px; font-weight: bold') Back
+extends ../layout/common-user.pug
+block content
+	h1(style="font-family: Arial, sans-serif;" class="text-primary") List user
+	table(class="table table-striped shadow-sm p-3 mb-5 bg-white rounded",style="text-align: left")
+		tr
+			th(scope="col") User
+		each user in users
+			tr
+				td(scope="row")
+					span= user.name

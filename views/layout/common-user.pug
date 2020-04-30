@@ -1,0 +1,20 @@
+html
+  head
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+  body
+    nav(class="nav justify-content-center")
+      a(href="/" class="nav-link active") 
+        button(type="button" class="btn btn-info") Home
+        
+      a(href="/users/see" class="nav-link active ") 
+        button(type="button" class="btn btn-primary ") Xem Users
+
+      a(href="/users/add" class="nav-link active") 
+        button(type="button" class="btn btn-success") Thêm User
+
+      //a(href="/users/modify" class="nav-link active") 
+        //button(type="button" class="btn btn-warning") Update User
+
+      a(href="/users/delete" class="nav-link active") 
+        button(type="button" class="btn btn-danger") Xóa Users
+    block content 

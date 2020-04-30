@@ -1,7 +1,18 @@
-h1 Modify the book
-ul
-	each book in books
-		li
-			span= book.title
-			a(href="/books/modify/" + book.id +"/title" style='text-decoration: none; color: #2196f3; font-size: 20px; font-weight: bold; padding: 0 10px') Sửa
-a(href="/books" style='text-decoration: none; color: #dd3737; font-size: 40px; font-weight: bold') Back
+extends ../layout/common-book.pug
+block content	
+	h1(style="font-family: Arial, sans-serif;" class="text-warning") Modify the book
+	table(class="table table-striped shadow-sm p-3 mb-5 bg-white rounded",style="text-align: left")
+		tr
+			th(scope="col") Title
+			th(scope="col") Modify
+		each book in books
+			tr
+				td(scope="row")
+					span= book.title
+				td
+					a(href="/books/modify/" + book.id +"/title" style='text-decoration: none; color: #2196f3; font-size: 20px; font-weight: bold; padding: 0 10px') Sửa
+	//- ul
+	//- 	each book in books
+	//- 		li
+	//- 			span= book.title
+	//- 			a(href="/books/modify/" + book.id +"/title" style='text-decoration: none; color: #2196f3; font-size: 20px; font-weight: bold; padding: 0 10px') Sửa

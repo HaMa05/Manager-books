@@ -1,19 +1,24 @@
-h1(style="font-family: Arial, sans-serif;") Mượn sách
-form(action="/transactions" method="post")
-	.choose-user(style="display: inline-block; margin-right: 50px")
-		label(for="users") Choose a user:
-		span &nbsp;
-		select(id="users" name="userId")
-			each user in users
-				option(value= user.name)
-					span= user.name
-					//(value= user.id)
-	.choose-book(style="display: inline-block; margin-right: 50px")
-		label(for="books") Choose a book:
-		span &nbsp;
-		select(id="books" name="bookId" ) 
-			each book in books
-				option(value= book.title)
-					span= book.title
-	input(type="submit" value="Create")  
-	//(value= book.id)
+extends ../layout/common-transaction.pug
+block nav	
+		a(href="/transactions"  class="nav-link active") 
+			button(type="button" class="btn btn-success") Transactions 
+block content
+	.group(class="d-flex p-2 bd-highlight justify-content-center")
+		form(action="/transactions" method="post")
+			.choose-user(style="display: inline-block; margin-right: 50px" )
+				label(for="users") Choose a user:
+				span &nbsp;
+				select(id="users" name="userId" class="btn btn-dark dropdown-toggle shadow-sm ")
+					each user in users
+						option(value= user.name)
+							span= user.name
+							//(value= user.id)
+			.choose-book(style="display: inline-block; margin-right: 50px")
+				label(for="books") Choose a book:
+				span &nbsp;
+				select(id="books" name="bookId" class="btn btn-dark dropdown-toggle shadow-sm") 
+					each book in books
+						option(value= book.title)
+							span= book.title
+			button(type="submit" value="Create" class="btn btn-warning") Create
+			//- input(type="submit" value="Create")  
