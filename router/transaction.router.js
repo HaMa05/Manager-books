@@ -9,4 +9,7 @@ router.get('/create', controllerTransaction.create);
 
 router.post('/', controllerTransaction.postCreate);
 
+// improve if id = null
+router.get("/complete", controllerTransaction.errorFinish);
+
 module.exports = router;
