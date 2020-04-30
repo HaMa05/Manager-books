@@ -13,6 +13,9 @@ const bookRouter = require('./router/book.router.js');
 const userRouter = require('./router/user.router.js');
 const transactionRouter = require('./router/transaction.router.js');
 
+// use file in folder public
+app.use(express.static('public'))
+
 // Trang chính
 app.get('/', (req, res) => {
 	res.render('home.pug');

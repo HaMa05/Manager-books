@@ -79,3 +79,9 @@ module.exports.finishBook = (req, res) => {
 	  .write();
 	res.redirect('/transactions');
 }
+
+// if id = null
+module.exports.errorFinish = (req, res) => {
+	// res.send("Error !!!");
+	res.redirect('/transactions');
+}
