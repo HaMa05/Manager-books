@@ -17,25 +17,25 @@ module.exports.add = (req, res) => {
 }
 
 module.exports.postUser = (req, res) => {
-	let id = shortid.generate();
+		let id = shortid.generate();
 	let data = req.body;
-	// var passUser = [];
-	// for(let user of users) {
-	// 	passUser.concat(user.pass);
-	// }
 
-	// do {
-	// 	let pass = generatePassword();
+	// lọc tên sai quy dinh
+	if(data.name.length > 30 || /^\s+$/.test(data.name)) {
+		res.render('user/addUser.pug', {
+			error: "Name only start 'a - z, A - Z, 0 - 9' and < 30 character"
+		});
+		return;
+	}
 
-	// }while();
-	// let pass = generatePassword(12, false, /\d/, 'pass-');
-	// req.body.pass = pass;
 	req.body.id = id;
 	db.get('users')
 	  .push(data)
 	  .write();
 
-	res.redirect('/users');
+	res.render('user/seeUser.pug', {
+		users: users
+	});
 }
 
 module.exports.deleteUser = (req, res) => {
