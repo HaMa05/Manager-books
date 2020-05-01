@@ -17,17 +17,9 @@ module.exports.add = (req, res) => {
 }
 
 module.exports.postUser = (req, res) => {
-		let id = shortid.generate();
+	let id = shortid.generate();
 	let data = req.body;
-
-	// lọc tên sai quy dinh
-	if(data.name.length > 30 || /^\s+$/.test(data.name)) {
-		res.render('user/addUser.pug', {
-			error: "Name only start 'a - z, A - Z, 0 - 9' and < 30 character"
-		});
-		return;
-	}
-
+  
 	req.body.id = id;
 	db.get('users')
 	  .push(data)
