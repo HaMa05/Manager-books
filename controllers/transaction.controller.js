@@ -32,7 +32,7 @@ module.exports.indexTransaction = (req, res) => {
 		})
 	})
 
-	console.log(userDisplay);
+	// console.log(userDisplay);
 
 	// console.log(collections);
 	res.render('transaction/transaction.pug', {
