@@ -1,0 +1,15 @@
+extends ../layout/common.pug
+block content
+	h1(style="font-family: Arial, sans-serif;" class="text-success") Login
+	if error
+		.alert.alert-danger= error
+	form( method="POST")
+		.group(class="form-group col-md-6")
+			label(for="email") Email:
+			br
+			input(type="text" id="email" class="form-control" name="email" required )
+		.group(class="form-group col-md-6")
+			label(for="password") Password:
+			br
+			input(type="text" id="password" class="form-control" name="password" required)
+		button(type="submit" class="btn btn-warning ml-3") Login
