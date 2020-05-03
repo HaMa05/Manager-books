@@ -14,8 +14,11 @@ app.set('views', './views/');
 const bookRouter = require('./router/book.router.js');
 const userRouter = require('./router/user.router.js');
 const transactionRouter = require('./router/transaction.router.js');
+const authRouter = require('./router/auth.router.js');
 const indexRouter = require('./router/index.router.js');
+
 const cookieCount = require("./middleware/cookie-count");
+const middlewareAuth = require('./middleware/auth.middleware.js');
 
 // use file in folder public
 app.use(express.static('public'))
@@ -23,9 +26,10 @@ app.use(express.static('public'))
 // Trang chính
 app.use('/', indexRouter);
 
-app.use('/books', cookieCount.count, bookRouter);
-app.use('/users', cookieCount.count, userRouter);
-app.use('/transactions', cookieCount.count, transactionRouter);
+app.use('/auth', /*cookieCount.count*/ authRouter);
+app.use('/books', /*cookieCount.count*/ middlewareAuth.requireAuth, bookRouter);
+app.use('/users', /*cookieCount.count*/ middlewareAuth.requireAuth, userRouter);
+app.use('/transactions', /*cookieCount.count*/ middlewareAuth.requireAuth, transactionRouter);
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);

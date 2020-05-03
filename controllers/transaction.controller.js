@@ -32,13 +32,54 @@ module.exports.indexTransaction = (req, res) => {
 		})
 	})
 
-	// console.log(userDisplay);
-
-	// console.log(collections);
 	res.render('transaction/transaction.pug', {
 		collections: userDisplay
 	});
 
+}
+
+// user 
+module.exports.indexTransactionUser = (req, res, next) => {
+	let newUser = users;
+	let newBook = books;
+	let cookieId = req.cookies.cookieId; // cookieId = userId
+
+	// Neu la tai khoan dang nhap la admin thi chuyen sang module khac
+	let isAdmin = db.get('users').find({id: cookieId}).value();
+	if(isAdmin.isAdmin) {
+		next();
+		return;
+	}
+	// loại bỏ tính chất object
+	let a = JSON.stringify(collections);
+	let newColl = [];
+	newColl = JSON.parse(a);
+
+	// tim user dựa vào userId của collections
+	let user = newColl.filter((el) => {
+		// el.isComplete = false và id = true
+		if(el.isComplete !== true && el.id && el.userId === cookieId) {
+			return newUser.filter((user) => {
+				if(el.userId === user.id) {
+					return el.userId = user.name;
+				}
+			})
+		}
+	});
+
+	// tìm title dựa vào bookId
+	let userDisplay = user.filter((el) => {
+		return newBook.filter((book) => {
+			if(el.bookId === book.id) {
+				return el.bookId = book.title;
+			}
+		})
+	})
+
+	// console.log(userDisplay);
+	res.render('transaction/transaction.pug', {
+		collections: userDisplay
+	});
 }
 
 module.exports.create = (req, res) => {
