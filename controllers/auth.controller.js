@@ -1,6 +1,8 @@
 const md5 = require('md5');
+const bcrypt = require("bcrypt");
 
 const db = require('../db');
+var wrongLoginCountFn = require("../middleware/wrongLoginCount");
 
 module.exports.login = (req, res) => {
 	res.render('auth/login.pug');
@@ -18,16 +20,29 @@ module.exports.postLogin = (req, res) => {
 		});
 		return;
 	}
+  
+  // đăng nhập sai quá 4 lần
+  if (user.wrongLoginCount > 4) {
+    res.send("Error acount.");
+    return;
+  }
+ 
+	bcrypt.compare(password, user.password, (err, result) => {
+    if (err) throw err;
 
-  var hashedPassword = md5(password);
-	if(user.password !== hashedPassword) {
-		res.render('auth/login.pug', {
-			error: "Password don't exits.",
-			values: req.body
-		});
-		return;
-	}
-
-	res.cookie("cookieId", user.id);
-	res.redirect('/transactions');
+    if (result) {
+      res.cookie("cookieId", user.id, {
+        signed: true
+      });
+      res.redirect("/transactions");
+    } else {
+      // if user input fail
+      wrongLoginCountFn.wrongLogin(user);
+      res.render("auth/login.pug", {
+        error: "Password don't exits.",
+        values: req.body,
+      });
+      return;
+    }
+  });
 }

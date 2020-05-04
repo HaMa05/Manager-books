@@ -1,3 +1,6 @@
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 const db = require('../db');
 const shortid = require('shortid');
 const users = db.get('users').value();
@@ -19,12 +22,15 @@ module.exports.add = (req, res) => {
 module.exports.postUser = (req, res) => {
 	let id = shortid.generate();
 	let data = req.body;
-  
 	req.body.id = id;
-	db.get('users')
-	  .push(data)
-	  .write();
 
+	bcrypt.hash(data.password, saltRounds, (err, hash) => {
+		data.password = hash;
+		db.get('users')
+			.push(data)
+			.write();
+	})
+	// console.log(res.locals);
 	res.render('user/seeUser.pug', {
 		users: users
 	});

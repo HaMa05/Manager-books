@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser')
 //automational create id
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
+app.use(cookieParser("secret"));
 
 const pug = require('pug');
 app.set('view engine', 'pug');
@@ -29,7 +29,7 @@ app.use('/', indexRouter);
 app.use('/auth', /*cookieCount.count*/ authRouter);
 app.use('/books', /*cookieCount.count*/ middlewareAuth.requireAuth, bookRouter);
 app.use('/users', /*cookieCount.count*/ middlewareAuth.requireAuth, userRouter);
-app.use('/transactions', /*cookieCount.count*/ middlewareAuth.requireAuth, transactionRouter);
+app.use('/transactions', /*cookieCount.count*/ transactionRouter);
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
