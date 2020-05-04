@@ -42,7 +42,7 @@ module.exports.indexTransaction = (req, res) => {
 module.exports.indexTransactionUser = (req, res, next) => {
 	let newUser = users;
 	let newBook = books;
-	let cookieId = req.cookies.cookieId; // cookieId = userId
+	let cookieId = req.signedCookies.cookieId; // cookieId = userId
 
 	// Neu la tai khoan dang nhap la admin thi chuyen sang module khac
 	let isAdmin = db.get('users').find({id: cookieId}).value();

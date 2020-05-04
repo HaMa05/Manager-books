@@ -23,76 +23,40 @@
   ],
   "users": [
     {
-      "name": "Hieu Map",
-      "phone": "0967393125",
-      "id": "5UJ86mRcK",
-      "email": "info@hippo.po",
-      "password": "4297f44b13955235245b2497399d7a93"
+      "name": "Minh Hieu",
+      "phone": "4875923992",
+      "email": "info1@hippo.po",
+      "password": "$2b$10$b.H9WM.4rChP4Ttqs8QCVecs7jxxe5HI2EZWOs/0XNQ2jt4XlTmzC",
+      "id": "1kaCMJcXM",
+      "wrongLoginCount": 5
+    },
+    {
+      "name": "Hong Nhung",
+      "phone": "09679393123",
+      "email": "nhung@gmail.com",
+      "password": "$2b$10$Oz/LRQZJxHUkBboRkZT7zerYh/qR2QB16UUnShFDGeVYglROt3E1G",
+      "id": "DY7W_By0V",
+      "wrongLoginCount": 0
+    },
+    {
+      "name": "Admin",
+      "phone": "09679393125",
+      "email": "anhhaeagle@gmail.com",
+      "password": "$2b$10$/NJLcPqRkWHS1fodVx6Mv.F4tBMCJMWWbGhvpKVE/WUgOMgTmzvHm",
+      "id": "ACIZ6jnoo",
+      "isAdmin": true
     },
     {
       "name": "Bang Tho",
-      "phone": "0967393167",
-      "id": "n3vSEwpDg",
-      "email": "BangTho@gmail.com",
-      "password": "4297f44b13955235245b2497399d7a93"
-    },
-    {
-      "name": "Tuyet",
-      "phone": "0967393167",
-      "id": "4T5n28TAm",
-      "email": "phungtuyet@gmail.com",
-      "password": "4297f44b13955235245b2497399d7a93"
-    },
-    {
-      "name": "Ngọc",
-      "phone": "0967393167",
-      "id": "HzkWk6Gtz",
-      "email": "ngoctrinh@NTW.NT",
-      "password": "4297f44b13955235245b2497399d7a93"
-    },
-    {
-      "name": "Nhat Giang",
-      "phone": "4875923992",
-      "id": "B5wbxUObs",
-      "email": "giangbim@bim.im",
-      "password": "4297f44b13955235245b2497399d7a93"
-    },
-    {
-      "name": "HaBui",
-      "phone": "09679393123",
-      "id": "nwQ_BSXRP",
-      "email": "anhhaeagle@gmail.com",
-      "password": "4297f44b13955235245b2497399d7a93",
-      "isAdmin": true
+      "phone": "123456789",
+      "email": "bangtho@gmail.com",
+      "password": "$2b$10$kc0NIO7FWfzXQKW3bYPASuk7VcVYVTTq7aWymQBQjQXXCEy6ZxSU6",
+      "id": "2jl5ZArBQ",
+      "wrongLoginCount": 0
     }
   ],
-  "collections": [
-    {
-      "userId": "5UJ86mRcK",
-      "bookId": "ySJMG8v4l",
-      "id": "VN_RwXG89",
-      "isComplete": false
-    },
-    {
-      "userId": "n3vSEwpDg",
-      "bookId": "iwJn1hbvG",
-      "id": "EtOe3KSFo",
-      "isComplete": false
-    },
-    {
-      "userId": "4T5n28TAm",
-      "bookId": "VEVh4tc4q",
-      "id": "GFh4kuEq3",
-      "isComplete": false
-    },
-    {
-      "userId": "n3vSEwpDg",
-      "bookId": "LXlfTIDOi",
-      "id": "Ocw8VFFCk",
-      "isComplete": false
-    }
-  ],
+  "collections": [],
   "countCookie": {
-    "count": 0
+    "count": 60
   }
 }
