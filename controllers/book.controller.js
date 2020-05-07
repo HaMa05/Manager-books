@@ -1,13 +1,24 @@
 const db = require('../db');
 const books = db.get('books').value();
+const shortid = require("shortid");
 
 module.exports.index = (req, res) => {
 	res.render('book/index.pug');
 };
 
+// module.exports.see = (req, res) => {
+// 	res.render('book/see.pug', {
+// 		books: books
+// 	});
+// }
+
 module.exports.see = (req, res) => {
-	res.render('book/see.pug', {
-		books: books
+	let result = res.locals.result;
+	res.render('book/seeBookPagination.pug', {
+		books: result.perPage,
+    next: result.next,
+    page: result.page,
+    previous: result.previous
 	});
 }
 

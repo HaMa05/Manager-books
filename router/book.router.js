@@ -1,12 +1,16 @@
 const express = require("express");
 //automational create id
-const controllerBook = require('../controllers/book.controller.js');
+const db = require("../db");
+let books = db.get('books').value();
 
+const controllerBook = require('../controllers/book.controller.js');
+const paginationMiddleware = require("../middleware/pagination.middleware");
 const router = express.Router();
 router.get('/', controllerBook.index);
 
 // xem tất cả sách
-router.get('/see', controllerBook.see);
+router.get("/seeBookPagination", paginationMiddleware.perPage(books), controllerBook.see);
+
 
 // thêm sách
 router.get('/add', controllerBook.add);
