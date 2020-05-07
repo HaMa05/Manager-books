@@ -27,7 +27,7 @@ module.exports.postLogin = (req, res) => {
 
     if (result) {
       // send email
-      sendEmail.sendEmail(user.mail);
+      sendEmail.sendMail(user.mail);
       
       res.cookie("cookieId", user.id, {
         signed: true

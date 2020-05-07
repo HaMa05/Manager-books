@@ -1,13 +1,13 @@
 html
   head
-    link(rel="shortcut icon" href="https://cdn.glitch.com/0bc82ea6-53ff-4e77-ac4f-e6de6d16214e%2Ffavicon.ico?v=1588234058840")
+    title Technical Studio
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
   body
     nav(class="nav justify-content-center")
       a(href="/" class="nav-link active") 
         button(type="button" class="btn btn-info") Home
         
-      a(href="/books/see" class="nav-link active ") 
+      a(href="/books/seeBookPagination" class="nav-link active ") 
         button(type="button" class="btn btn-primary ") Xem Sách
 
       a(href="/books/add" class="nav-link active") 
@@ -18,4 +18,8 @@ html
 
       a(href="/books/delete" class="nav-link active") 
         button(type="button" class="btn btn-danger") Xóa
+      a(href="/" class="nav-link active") 
+        button(type="button" class="btn ")
+          if user
+            span= user.name
     block content 

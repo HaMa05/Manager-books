@@ -9,11 +9,22 @@ module.exports.index = (req, res) => {
 	res.render('user/indexUser.pug');
 }
 
+// module.exports.see = (req, res) => {
+// 	res.render('user/seeUser.pug', {
+// 		users: users
+// 	});
+// }
+
 module.exports.see = (req, res) => {
-	res.render('user/seeUser.pug', {
-		users: users
+	let result = res.locals.result;
+	res.render('user/seeUserPagination.pug', {
+		users: result.perPage,
+    next: result.next,
+    page: result.page,
+    previous: result.previous
 	});
 }
+
 
 module.exports.add = (req, res) => {
 	res.render('user/addUser.pug');

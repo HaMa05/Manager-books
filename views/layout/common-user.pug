@@ -1,7 +1,8 @@
 html
   head
+    title Technical Studio
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
-    link(rel="shortcut icon" href="https://cdn.glitch.com/0bc82ea6-53ff-4e77-ac4f-e6de6d16214e%2Ffavicon.ico?v=1588234058840")
+
   body
     nav(class="nav justify-content-center")
       a(href="/" class="nav-link active") 
@@ -13,9 +14,13 @@ html
       a(href="/users/add" class="nav-link active") 
         button(type="button" class="btn btn-success") Thêm User
 
-      //a(href="/users/modify" class="nav-link active") 
-        //button(type="button" class="btn btn-warning") Update User
+      a(href="/users/modify" class="nav-link active") 
+        button(type="button" class="btn btn-warning") Update User
 
       a(href="/users/delete" class="nav-link active") 
         button(type="button" class="btn btn-danger") Xóa Users
+      a(href="/" class="nav-link active") 
+        button(type="button" class="btn")
+          if user
+            span= user.name
     block content 

@@ -1,0 +1,25 @@
+extends ../layout/common-book.pug
+block content
+  .product.mt-5.mx-5.d-flex.justify-content-center.align-items-center.flex-column
+    .d-flex.justify-content-center.flex-wrap
+      each book in books
+        .p-2.bd-highlight.flex-shrink-1
+          .card(style='width: 18rem;')
+            img.card-img-top(src=book.picture, alt='picture')
+            .card-body
+              h5.card-title= book.title
+              p.card-text= book.description
+              a.btn.btn-primary(href='#') Views
+    nav(aria-label='Page navigation example')
+      ul.pagination
+        if previous
+          li.page-item
+            a.page-link(href='?page=' + previous aria-label="Previous")
+              span(aria-hidden="true") &laquo;
+        li.page-item
+          a.page-link(href='#')= page
+        if next
+          li.page-item
+            a.page-link(href='?page=' + next aria-label="Next")
+              span(aria-hidden="true") &raquo;
+        

@@ -1,10 +1,17 @@
 html
   head
-    link(rel="shortcut icon" href="https://cdn.glitch.com/0bc82ea6-53ff-4e77-ac4f-e6de6d16214e%2Ffavicon.ico?v=1588234058840")
+    title Technical Studio
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
   body
     nav(class="nav justify-content-center")
       block nav
       a(href="/" class="nav-link active") 
         button(type="button" class="btn btn-info") Home
-    block content 
+      a(href="/products"  class="nav-link active") 
+        button(type="button" class="btn btn-warning") Product
+      a(href="/" class="nav-link active") 
+        button(type="button" class="btn")
+          if user
+            span= user.name
+    block content
+    script(src="https://kit.fontawesome.com/fa4b40adeb.js" crossorigin="anonymous")
