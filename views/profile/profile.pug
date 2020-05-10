@@ -1,0 +1,18 @@
+extends ../layout/common-transaction.pug
+block content
+  .d-flex.flex-row.bd-highlight.mt-5.justify-content-center(style="font-family: sans-serif")
+    .p-2.bd-highlight.d-flex.flex-column.justify-content-center.align-items-center.border.border-primary.border-right-0.rounded-lg
+      img.rounded.mx-auto.d-block.rounded-circle.border.border-warning.rounded-sm(src=user.avatar, alt='Avatar' width="200px")
+      .group(class="form-group")
+        a(href="/profile/avatar" class="nav-link active") 
+          button(type="button" class="btn btn-success") Update Avatar
+          
+    .p-2.bd-highlight.d-flex.flex-column.border.border-primary.rounded-lg(style="font-size: 20px; color: #000")
+      span Name: &nbsp;
+        span= user.name
+      br
+      span Phone: &nbsp;
+        span= user.phone
+      br
+      span Email: &nbsp;
+        span= user.email

@@ -17,6 +17,7 @@ const userRouter = require('./router/user.router.js');
 const transactionRouter = require('./router/transaction.router.js');
 const authRouter = require('./router/auth.router.js');
 const indexRouter = require('./router/index.router.js');
+const profileRouter = require("./router/profile.router.js");
 
 const paginationRouter = require("./router/pagination.router.js");
 
@@ -34,6 +35,7 @@ app.use('/books', /*cookieCount.count*/ middlewareAuth.requireAuth, bookRouter);
 app.use('/users', /*cookieCount.count*/ middlewareAuth.requireAuth, userRouter);
 app.use('/transactions', /*cookieCount.count*/ middlewareAuth.requireAuth, transactionRouter);
 app.use("/products", middlewareAuth.requireAuth, paginationRouter);
+app.use("/profile", middlewareAuth.requireAuth, profileRouter);
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {

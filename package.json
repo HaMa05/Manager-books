@@ -19,7 +19,9 @@
     "md5": "^2.2.1",
     "bcrypt": "^4.0.1",
     "nodemailer": "^6.4.6",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "multer": "^1.4.2",
+    "cloudinary": "^1.21.0"
   },
   "engines": {
     "node": "12.x"
