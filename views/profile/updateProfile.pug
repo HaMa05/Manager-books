@@ -1,0 +1,12 @@
+extends ../layout/common-transaction.pug
+block content
+  .d-flex.flex-row.bd-highlight.mt-5.justify-content-center(style="font-family: sans-serif")
+    form(action="", method="post" enctype="multipart/form-data")
+      img.rounded.mx-auto.d-block.rounded-circle.border.border-warning.rounded-sm(src=user.avatar, alt='Avatar' width="200px")
+      .p-2.bd-highlight.d-flex.flex-column.justify-content-center.align-items-center.rounded-lg
+        .p-2.bd-highlight.d-flex.flex-column.border.border-primary.rounded-lg(style="font-size: 20px; color: #000")
+          .group(class="form-group")
+            label(for="avatar") Update Avatar:
+            br
+            input(type="file", name="avatar" class="form-control-file")
+        button(type="submit"  class="btn btn-success") Submit

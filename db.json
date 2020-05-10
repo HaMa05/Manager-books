@@ -605,7 +605,7 @@
     {
       "name": "Admin",
       "phone": "0999999999",
-      "avatar": "https://robohash.org/etestqui.png?size=200x200&set=set1",
+      "avatar": "https://res.cloudinary.com/buivanha/image/upload/v1589080428/image.jpg",
       "email": "anhhaeagle@gmail.com",
       "password": "$2b$10$/NJLcPqRkWHS1fodVx6Mv.F4tBMCJMWWbGhvpKVE/WUgOMgTmzvHm",
       "id": "ACIZ6jnoo",
@@ -1099,7 +1099,14 @@
       "id": "c6ed3487-7c2b-4cd7-bf0f-ea34145dd218"
     }
   ],
-  "collections": [],
+  "collections": [
+    {
+      "userId": "ACIZ6jnoo",
+      "bookId": "ddee78b7-995b-489a-b684-3a31e3c8075a",
+      "id": "dMBGugpXr",
+      "isComplete": false
+    }
+  ],
   "countCookie": {
     "count": 60
   }
