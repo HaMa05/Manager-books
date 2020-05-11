@@ -114,9 +114,21 @@ module.exports.postCreate = (req, res) => {
 
 module.exports.finishBook = (req, res) => {
 	const id = req.params.id;
+  var book = db.get('collections')
+		.find({id: id})
+		.value()
+  
+  if(book.amount === 1) {
+			db.get('collections')
+			.find({id: id})
+			.assign({isComplete: true})
+			.write();
+		res.redirect('/transactions');
+	}
+  
 	db.get('collections')
 	  .find({id: id})
-	  .assign({isComplete: true})
+	  .assign({amount: book.amount - 1})
 	  .write();
 	res.redirect('/transactions');
 }

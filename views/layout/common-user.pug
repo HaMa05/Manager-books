@@ -19,8 +19,9 @@ html
 
       a(href="/users/delete" class="nav-link active") 
         button(type="button" class="btn btn-danger") Xóa Users
-      a(href="/" class="nav-link active") 
-        button(type="button" class="btn")
-          if user
-            span= user.name
+      if user
+        a(href="/" class="nav-link active") 
+          button(type="button" class="btn")
+            if user
+              span= user.name
     block content 
