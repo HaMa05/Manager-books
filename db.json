@@ -1104,10 +1104,12 @@
       "userId": "ACIZ6jnoo",
       "bookId": "ddee78b7-995b-489a-b684-3a31e3c8075a",
       "id": "dMBGugpXr",
+      "amount": 0,
       "isComplete": false
     }
   ],
   "countCookie": {
     "count": 60
-  }
+  },
+  "session": []
 }

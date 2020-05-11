@@ -18,8 +18,9 @@ html
 
       a(href="/books/delete" class="nav-link active") 
         button(type="button" class="btn btn-danger") Xóa
-      a(href="/" class="nav-link active") 
-        button(type="button" class="btn ")
-          if user
-            span= user.name
+      if user
+        a(href="/" class="nav-link active") 
+          button(type="button" class="btn ")
+            if user
+              span= user.name
     block content 

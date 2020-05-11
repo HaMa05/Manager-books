@@ -23,9 +23,11 @@ const paginationRouter = require("./router/pagination.router.js");
 
 const cookieCount = require("./middleware/cookie-count");
 const middlewareAuth = require('./middleware/auth.middleware.js');
+const middlewareSession = require("./middleware/session.middleware.js");
 
 // use file in folder public
 app.use(express.static('public'))
+app.use(middlewareSession);
 
 // Trang chính
 app.use('/', indexRouter);
@@ -34,7 +36,7 @@ app.use('/auth', /*cookieCount.count*/ authRouter);
 app.use('/books', /*cookieCount.count*/ middlewareAuth.requireAuth, bookRouter);
 app.use('/users', /*cookieCount.count*/ middlewareAuth.requireAuth, userRouter);
 app.use('/transactions', /*cookieCount.count*/ middlewareAuth.requireAuth, transactionRouter);
-app.use("/products", middlewareAuth.requireAuth, paginationRouter);
+app.use("/products", paginationRouter);
 app.use("/profile", middlewareAuth.requireAuth, profileRouter);
 
 // listen for requests :)

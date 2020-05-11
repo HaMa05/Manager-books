@@ -1,5 +1,7 @@
 extends ../layout/common-transaction.pug
 block nav
+  a(href="/transactions"  class="nav-link active") 
+    button(type="button" class="btn btn-success") Transactions
 block content
   .product.mt-5.mx-5.d-flex.justify-content-center.align-items-center.flex-column
     .d-flex.justify-content-center.flex-wrap
@@ -10,7 +12,7 @@ block content
             .card-body
               h5.card-title= book.title
               p.card-text= book.description
-              a.btn.btn-primary(href='#') Views
+              a.btn.btn-primary(href='/products/add/' + book.id) Thêm
     nav(aria-label='Page navigation example')
       ul.pagination
         if previous

@@ -1,20 +1,25 @@
 extends ../layout/common-transaction.pug
 block nav
-		a(href="/transactions/create" class="nav-link active ") 
-			button(type="button" class="btn btn-success ") Mượn sách
+  a(href="/transactions/create" class="nav-link active ") 
+    button(type="button" class="btn btn-success ") Mượn sách
+  a(href="/products" class="nav-link active ") 
+    button(type="button" class="btn btn-warning  ") Product
 block content
-	h1(style="font-family: Arial, sans-serif;") Danh sách người mượn
+  h1(style="font-family: Arial, sans-serif;") Danh sách người mượn
 
-	table(class="table table-striped",style="text-align: left")
-		tr
-			th(scope="col") User
-			th(scope="col") Title
-			th(scope="col") Finish
-		each collection in collections
-			tr
-				td(scope="row")
-					span= collection.userId
-				td(scope="row")
-					span= collection.bookId
-				td(scope="row")
-					a(href="transactions/" + collection.id + "/complete"  style="text-decoration: none;font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; color: #00c108;") Hoàn Thành
+  table(class="table table-striped",style="text-align: left")
+    tr
+      th(scope="col") User
+      th(scope="col") Title
+      th(scope="col") Amount
+      th(scope="col") Finish
+    each collection in collections
+      tr
+        td(scope="row")
+          span= collection.userId
+        td(scope="row")
+          span= collection.bookId
+        td(scope="row")
+          span= collection.amount
+        td(scope="row")
+          a(href="transactions/" + collection.id + "/complete"  style="text-decoration: none;font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; color: #00c108;") Hoàn Thành
